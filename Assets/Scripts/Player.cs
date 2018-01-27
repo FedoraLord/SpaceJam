@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
+using UnityEngine.Experimental.UIElements;
 
 public class Player : MonoBehaviour {
 
@@ -19,17 +20,30 @@ public class Player : MonoBehaviour {
     public AnimatorOverrideController normalAnimationController;
     public AnimatorOverrideController hurtAnimationController;
     #endregion
+
     public float hurtTime;
     private bool isHurt;
     public GameController gc;
 
+    #region Hud Directions 
+    public GameObject upIndicator;
+    public GameObject downIndicator;
+    public GameObject leftIndicator;
+    public GameObject rightIndicator;
+    GameObject activeIndicator = null;
+    #endregion
 
 
-	void Start () {
-		
-	}
-	
-	void Update () {
+
+    void Start () {
+        upIndicator.SetActive(false);
+        downIndicator.SetActive(false);
+        leftIndicator.SetActive(false);
+        rightIndicator.SetActive(false);
+
+    }
+
+    void Update () {
 		
 	}
 
@@ -57,7 +71,11 @@ public class Player : MonoBehaviour {
 
         if (Input.GetKey(KeyCode.Space))
         {
+<<<<<<< HEAD
             TakeDamage();
+=======
+            Ping();
+>>>>>>> 86c5ab2863a5d7d536e60d2a6e56741fc80cc8be
         }
         
     }
@@ -114,11 +132,53 @@ public class Player : MonoBehaviour {
 
     private void Ping()
     {
-        var closestObject = gc.objectives.Where(x => x.IsActive).OrderBy(y => Vector2.Distance(transform.position, y.transform.position)).FirstOrDefault();
-        
-        //Show the UI hud and the direction to point it
-        
+        var closestObject = gc.objectives.Where(x => x.IsActive && x.gameObject.tag == "Goal").OrderBy(y => Vector2.Distance(transform.position, y.transform.position)).FirstOrDefault();
+        if (closestObject != null)
+        {
+            Vector2 objectDirection = GetDirectionOfObject(closestObject.gameObject);
+            SetActiveHUDDirection(objectDirection);
+            Invoke("DisableActiveIndicator", 3);
+        }
     }
+
+    private void SetActiveHUDDirection(Vector2 direction)
+    {
+        if(direction.x == -1)
+        {
+            leftIndicator.SetActive(true);
+            activeIndicator = leftIndicator;
+        }
+        if(direction.x == 1)
+        {
+            rightIndicator.SetActive(true);
+            activeIndicator = rightIndicator;
+        }
+        if(Math.Ceiling(direction.y) == 1)
+        {
+            upIndicator.SetActive(true);
+            activeIndicator = upIndicator;
+        }
+        if(direction.y == -1)
+        {
+            downIndicator.SetActive(true);
+            activeIndicator = downIndicator;
+        }
+    }
+
+    private void DisableActiveIndicator()
+    {
+        activeIndicator.SetActive(false);
+    }
+    
+    private Vector2 GetDirectionOfObject(GameObject obj)
+    {
+        Vector2 myPos = new Vector2(gameObject.transform.position.x, gameObject.transform.position.y);
+        Vector2 objPos = new Vector2(obj.transform.position.x, obj.transform.position.y);
+        var heading = objPos - myPos;
+        
+        return heading.normalized;
+    }
+    
     
     
 }
