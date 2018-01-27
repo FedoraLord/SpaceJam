@@ -324,9 +324,11 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Animations\New Text Document.txt" />
-    <None Include="Assets\Prefabs\New Text Document.txt" />
     <None Include="Assets\Programming Plan.txt" />
+<<<<<<< HEAD
     <None Include="Assets\Scenes\New Text Document.txt" />
+=======
+>>>>>>> 9166f5a23f2cf9dade487179f1651d9643043bfa
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />
