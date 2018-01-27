@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class Player : MonoBehaviour {
 
@@ -14,7 +15,14 @@ public class Player : MonoBehaviour {
     public float forwardResistance;
     public float turnSpeed;
     public float turnResistance;
+<<<<<<< HEAD
     public float HurtTime;
+=======
+    public RaycastHit2D[] hits;
+    public GameController gc;
+    public float smallPingDistance;
+    public float mediumPingDistance;
+>>>>>>> aadbda1952c5c95e9d9e0148a86ef6a8954c6913
 
 	void Start () {
 		
@@ -76,6 +84,7 @@ public class Player : MonoBehaviour {
             rb.angularVelocity = turnSpeed * rotation;
     }
 
+<<<<<<< HEAD
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "whatever you name bullets")
@@ -88,6 +97,26 @@ public class Player : MonoBehaviour {
     {
 
     }
+=======
+    private void Ping()
+    {
+        var closestObject = gc.objectives.Where(x => x.IsActive).OrderBy(y => Vector2.Distance(transform.position, y.transform.position)).FirstOrDefault();
+        var distance = Vector2.Distance(transform.position, closestObject.transform.position);
+        //Show the UI hud and the direction to point it
+        if (distance < smallPingDistance)
+        {
+        }
+        else if(distance < mediumPingDistance)
+        {
+
+        }
+        else
+        {
+
+        }
+    }
+
+>>>>>>> aadbda1952c5c95e9d9e0148a86ef6a8954c6913
     
 }
 
