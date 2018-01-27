@@ -139,10 +139,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 73213260}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e4dcff77c6cdbf44b94f82b7df86ee28, type: 3}
+  m_Script: {fileID: 11500000, guid: 759ae25b982f9bc44853b43d9121de22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ObstacleSize: 1
+  IsActive: 1
 --- !u!61 &73213262
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -219,7 +219,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 73213260}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.75, y: 8.22, z: 0}
+  m_LocalPosition: {x: 0, y: 9.35, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -248,8 +248,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 344746356}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2, y: 265, z: -5022}
-  m_LocalScale: {x: 55.8, y: 55.8, z: 55.8}
+  m_LocalPosition: {x: 25, y: 262, z: -5022}
+  m_LocalScale: {x: 7.4936824, y: 60.24535, z: 55.8}
   m_Children: []
   m_Father: {fileID: 919684205}
   m_RootOrder: 0
@@ -464,7 +464,7 @@ GameObject:
   - component: {fileID: 879084052}
   - component: {fileID: 879084051}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: directionUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -537,10 +537,10 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
+  - {fileID: 919684205}
   - {fileID: 1955983392}
   - {fileID: 1312672249}
   - {fileID: 1111813203}
-  - {fileID: 919684205}
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -560,7 +560,7 @@ GameObject:
   - component: {fileID: 919684207}
   - component: {fileID: 919684206}
   m_Layer: 5
-  m_Name: Panel (3)
+  m_Name: upIndicator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -578,11 +578,11 @@ RectTransform:
   m_Children:
   - {fileID: 344746357}
   m_Father: {fileID: 879084054}
-  m_RootOrder: 3
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.9622474}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -268.5}
+  m_AnchoredPosition: {x: 463, y: -268.5}
   m_SizeDelta: {x: 0, y: 537}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &919684206
@@ -629,7 +629,7 @@ GameObject:
   - component: {fileID: 1111813205}
   - component: {fileID: 1111813204}
   m_Layer: 5
-  m_Name: Panel (2)
+  m_Name: rightIndicator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -647,12 +647,12 @@ RectTransform:
   m_Children:
   - {fileID: 1498405761}
   m_Father: {fileID: 879084054}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.9775638, y: 0}
+  m_AnchorMin: {x: 0.9775638, y: 0.06583154}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -625, y: 0}
-  m_SizeDelta: {x: 1250, y: 0}
+  m_AnchoredPosition: {x: -625, y: -21}
+  m_SizeDelta: {x: 1250, y: 42}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1111813204
 MonoBehaviour:
@@ -756,7 +756,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1126057636}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.83, y: 10.79, z: 0}
+  m_LocalPosition: {x: 15.83, y: 7.14, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -872,7 +872,7 @@ GameObject:
   - component: {fileID: 1312672251}
   - component: {fileID: 1312672250}
   m_Layer: 5
-  m_Name: Panel (1)
+  m_Name: leftIndicator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -890,7 +890,7 @@ RectTransform:
   m_Children:
   - {fileID: 1880761047}
   m_Father: {fileID: 879084054}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0.027872559, y: 1}
@@ -939,11 +939,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4841489387803840, guid: c4c3547ebc252d741b0b7c2866fcf4ed, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -0.76
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4841489387803840, guid: c4c3547ebc252d741b0b7c2866fcf4ed, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -1.51
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4841489387803840, guid: c4c3547ebc252d741b0b7c2866fcf4ed, type: 2}
       propertyPath: m_LocalPosition.z
@@ -973,6 +973,36 @@ Prefab:
       propertyPath: m_Name
       value: Player (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 114685887070452656, guid: c4c3547ebc252d741b0b7c2866fcf4ed,
+        type: 2}
+      propertyPath: directionIndicator
+      value: 
+      objectReference: {fileID: 879084050}
+    - target: {fileID: 114685887070452656, guid: c4c3547ebc252d741b0b7c2866fcf4ed,
+        type: 2}
+      propertyPath: upIndicator
+      value: 
+      objectReference: {fileID: 919684204}
+    - target: {fileID: 114685887070452656, guid: c4c3547ebc252d741b0b7c2866fcf4ed,
+        type: 2}
+      propertyPath: downIndicator
+      value: 
+      objectReference: {fileID: 1955983391}
+    - target: {fileID: 114685887070452656, guid: c4c3547ebc252d741b0b7c2866fcf4ed,
+        type: 2}
+      propertyPath: leftIndicator
+      value: 
+      objectReference: {fileID: 1312672248}
+    - target: {fileID: 114685887070452656, guid: c4c3547ebc252d741b0b7c2866fcf4ed,
+        type: 2}
+      propertyPath: rightIndicator
+      value: 
+      objectReference: {fileID: 1111813202}
+    - target: {fileID: 114685887070452656, guid: c4c3547ebc252d741b0b7c2866fcf4ed,
+        type: 2}
+      propertyPath: gc
+      value: 
+      objectReference: {fileID: 1792158062}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c4c3547ebc252d741b0b7c2866fcf4ed, type: 2}
   m_IsPrefabParent: 0
@@ -1002,10 +1032,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1485270255}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e4dcff77c6cdbf44b94f82b7df86ee28, type: 3}
+  m_Script: {fileID: 11500000, guid: 7e56aa43e4870ec4da465cecaacf8a15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ObstacleSize: 1
 --- !u!61 &1485270257
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1082,7 +1111,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1485270255}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.42, y: 6.5, z: 0}
+  m_LocalPosition: {x: 11.37, y: 0.02, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1188,8 +1217,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c107bc9ee291c446a61082692be1aff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectives: []
-  enemies: []
+  objectives:
+  - {fileID: 73213261}
+  enemies:
+  - {fileID: 1485270256}
 --- !u!4 &1792158063
 Transform:
   m_ObjectHideFlags: 0
@@ -1287,7 +1318,7 @@ GameObject:
   - component: {fileID: 1955983394}
   - component: {fileID: 1955983393}
   m_Layer: 5
-  m_Name: Panel
+  m_Name: downIndicator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1305,7 +1336,7 @@ RectTransform:
   m_Children:
   - {fileID: 684245174}
   m_Father: {fileID: 879084054}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0.9937451, y: 0.06583154}
