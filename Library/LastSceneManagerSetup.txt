@@ -1,8 +1,4 @@
 sceneSetups:
-<<<<<<< HEAD
 - path: Assets/Scenes/Elbis.unity
-=======
-- path: Assets/Scenes/Jeremy.unity
->>>>>>> 9166f5a23f2cf9dade487179f1651d9643043bfa
   isLoaded: 1
   isActive: 1

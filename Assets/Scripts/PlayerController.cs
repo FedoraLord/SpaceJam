@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Assets.Scripts;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,7 +11,7 @@ public class PlayerController : MonoBehaviour {
     public float acceleration;
     public float resistance;
     public float rotateSpeed;
-
+    public RaycastHit2D[] hits;
 	void Start () {
 		
 	}
@@ -29,6 +30,11 @@ public class PlayerController : MonoBehaviour {
         {
             Deccelerate();
         }
+        if (Input.GetKey(KeyCode.Space))
+        {
+            hits = Physics2D.RaycastAll(transform.position, transform.up, 100.0F);
+            GetHitGameObjects(hits);
+        }
     }
 
     private void Accelerate()
@@ -46,4 +52,22 @@ public class PlayerController : MonoBehaviour {
     {
         rb.velocity = rb.velocity * 0.9f;
     }
+
+    private Dictionary<GameObject, GameObjectTypes> GetHitGameObjects(RaycastHit2D[] hit2D)
+    {
+        Dictionary<GameObject, GameObjectTypes> gameObjects = new Dictionary<GameObject, GameObjectTypes>(); 
+
+        for(int i = 0; i <= hit2D.Length; i++)
+        {
+            RaycastHit2D hit = hit2D[i];
+            gameObjects.Add(hit.transform.gameObject, (GameObjectTypes)Enum.Parse(typeof(GameObjectTypes),hit.transform.gameObject.tag));
+            ObstaclesController obstacle = hit.transform.GetComponent<ObstaclesController>();
+        }
+        return gameObjects;
+    }
+
+
+
 }
+
+

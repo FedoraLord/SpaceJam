@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GameController : MonoBehaviour {
 
-    RaycastHit[] hits;
+    RaycastHit2D[] hits;
 
 	// Use this for initialization
 	void Start () {
