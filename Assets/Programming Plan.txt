@@ -1,0 +1,9 @@
+player movement
+
+Ping
+	make obstacles and objective transforms
+	Obstacles are on a certain layer
+	RaycastAll to each transform (use obstacle layer mask)
+	Read each of the hits returned
+
+background tile generation
