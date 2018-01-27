@@ -9,9 +9,11 @@ public class PlayerController : MonoBehaviour {
     public Rigidbody2D rb;
     public float maxSpeed;
     public float acceleration;
-    public float resistance;
-    public float rotateSpeed;
+    public float forwardResistance;
+    public float turnSpeed;
+    public float turnResistance;
     public RaycastHit2D[] hits;
+
 	void Start () {
 		
 	}
@@ -30,6 +32,18 @@ public class PlayerController : MonoBehaviour {
         {
             Deccelerate();
         }
+
+        int rotation = 0;
+        if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
+        {
+            rotation += 1;
+        }
+        if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
+        {
+            rotation -= 1;
+        }
+        Turn(rotation);
+
         if (Input.GetKey(KeyCode.Space))
         {
             
@@ -44,13 +58,40 @@ public class PlayerController : MonoBehaviour {
         if (vel.magnitude >= maxSpeed)
             vel = transform.up * maxSpeed;
 
-        rb.velocity = acc;
+        rb.velocity = vel;
     }
 
     private void Deccelerate()
     {
         rb.velocity = rb.velocity * 0.9f;
     }
+<<<<<<< HEAD
+=======
+
+    private void Turn(int rotation)
+    {
+        if (rotation == 0)
+            rb.angularVelocity = rb.angularVelocity * 0.9f;
+        else
+            rb.angularVelocity = turnSpeed * rotation;
+    }
+
+    private Dictionary<GameObject, GameObjectTypes> GetHitGameObjects(RaycastHit2D[] hit2D)
+    {
+        Dictionary<GameObject, GameObjectTypes> gameObjects = new Dictionary<GameObject, GameObjectTypes>(); 
+
+        for(int i = 0; i <= hit2D.Length; i++)
+        {
+            RaycastHit2D hit = hit2D[i];
+            gameObjects.Add(hit.transform.gameObject, (GameObjectTypes)Enum.Parse(typeof(GameObjectTypes),hit.transform.gameObject.tag));
+            ObstaclesController obstacle = hit.transform.GetComponent<ObstaclesController>();
+        }
+        return gameObjects;
+    }
+
+
+
+>>>>>>> c755c39509a6d98aad08946a29d922d8b946a468
 }
 
 
