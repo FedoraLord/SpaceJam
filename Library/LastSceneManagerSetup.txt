@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/Jeremy.unity
+- path: Assets/Scenes/Elbis.unity
   isLoaded: 1
   isActive: 1

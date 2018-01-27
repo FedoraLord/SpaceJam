@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class Player : MonoBehaviour {
 
@@ -12,6 +13,9 @@ public class Player : MonoBehaviour {
     public float turnSpeed;
     public float turnResistance;
     public RaycastHit2D[] hits;
+    public GameController gc;
+    public float smallPingDistance;
+    public float mediumPingDistance;
 
 	void Start () {
 		
@@ -72,6 +76,25 @@ public class Player : MonoBehaviour {
         else
             rb.angularVelocity = turnSpeed * rotation;
     }
+
+    private void Ping()
+    {
+        var closestObject = gc.objectives.Where(x => x.IsActive).OrderBy(y => Vector2.Distance(transform.position, y.transform.position)).FirstOrDefault();
+        var distance = Vector2.Distance(transform.position, closestObject.transform.position);
+        //Show the UI hud and the direction to point it
+        if (distance < smallPingDistance)
+        {
+        }
+        else if(distance < mediumPingDistance)
+        {
+
+        }
+        else
+        {
+
+        }
+    }
+
     
 }
 

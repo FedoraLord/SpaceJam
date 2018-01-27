@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Objective : MonoBehaviour {
-
+    public bool IsActive = true;
 	// Use this for initialization
 	void Start () {
 		
@@ -13,4 +13,5 @@ public class Objective : MonoBehaviour {
 	void Update () {
 		
 	}
+    
 }
