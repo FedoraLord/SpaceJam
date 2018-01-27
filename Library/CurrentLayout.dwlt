@@ -513,7 +513,7 @@ MonoBehaviour:
   m_PersistentViewDataDictionary: {fileID: 0}
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 
+    m_SelectedIDs: 04280000
     m_LastClickedID: 0
     m_ExpandedIDs: 86fbffff00000000
     m_RenameOverlay:
@@ -577,18 +577,18 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets
+    - Assets/Scripts
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
-  - Assets
+  - Assets/Scripts
   m_LastFoldersGridSize: 16
   m_LastProjectPath: C:\Users\jerkr\Documents\GitHub\SpaceJam
   m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 5e270000
-    m_LastClickedID: 10078
+    m_SelectedIDs: 00280000
+    m_LastClickedID: 10240
     m_ExpandedIDs: 000000005e270000ffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -644,7 +644,7 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 0
+    m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: 72edffffecbfffff881f0000c6230000ce2300000056fdff4cc3fcff9c57ffffa2380000d823000000000000dc230000402400000a250000b2270000e6230000ea23000038240000b0aeffff06530000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
