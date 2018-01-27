@@ -1,8 +1,4 @@
 sceneSetups:
-<<<<<<< HEAD
 - path: Assets/Scenes/Title.unity
-=======
-- path: Assets/Scenes/Jeremy.unity
->>>>>>> fe5d9600248af7d338ccf2ea726902704c1e9f73
   isLoaded: 1
   isActive: 1
