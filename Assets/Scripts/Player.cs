@@ -71,11 +71,7 @@ public class Player : MonoBehaviour {
 
         if (Input.GetKey(KeyCode.Space))
         {
-<<<<<<< HEAD
-            TakeDamage();
-=======
             Ping();
->>>>>>> 86c5ab2863a5d7d536e60d2a6e56741fc80cc8be
         }
         
     }
