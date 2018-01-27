@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 53aa9292b1ab1e6448e3efe011f31c41
-timeCreated: 1517035437
+timeCreated: 1517065823
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -136,21 +136,7 @@ TextureImporter:
         width: 971
         height: 667
       alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: PlayerSpriteSheet_1
-      rect:
-        serializedVersion: 2
-        x: 996
-        y: 534
-        width: 6
-        height: 10
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -164,21 +150,7 @@ TextureImporter:
         width: 971
         height: 908
       alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: PlayerSpriteSheet_3
-      rect:
-        serializedVersion: 2
-        x: 1996
-        y: 533
-        width: 6
-        height: 11
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -192,21 +164,7 @@ TextureImporter:
         width: 971
         height: 998
       alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: PlayerSpriteSheet_5
-      rect:
-        serializedVersion: 2
-        x: 2996
-        y: 534
-        width: 6
-        height: 10
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -220,21 +178,7 @@ TextureImporter:
         width: 971
         height: 998
       alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: PlayerSpriteSheet_7
-      rect:
-        serializedVersion: 2
-        x: 3996
-        y: 534
-        width: 4
-        height: 10
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
