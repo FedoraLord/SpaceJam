@@ -293,7 +293,6 @@
     <Compile Include="Assets\Scripts\Player.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Assets\Animations\New Text Document.txt" />
     <None Include="Assets\Programming Plan.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

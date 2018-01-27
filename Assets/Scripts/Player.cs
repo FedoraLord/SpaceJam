@@ -6,12 +6,15 @@ using UnityEngine;
 public class Player : MonoBehaviour {
 
     public Rigidbody2D rb;
+    public Animator animator;
+    public RuntimeAnimatorController animationController;
+    public AnimatorOverrideController hurtAnimationController;
     public float maxSpeed;
     public float acceleration;
     public float forwardResistance;
     public float turnSpeed;
     public float turnResistance;
-    public RaycastHit2D[] hits;
+    public float HurtTime;
 
 	void Start () {
 		
@@ -45,7 +48,7 @@ public class Player : MonoBehaviour {
 
         if (Input.GetKey(KeyCode.Space))
         {
-            
+            RaycastHit2D[] hits;
         }
     }
 
@@ -71,6 +74,19 @@ public class Player : MonoBehaviour {
             rb.angularVelocity = 0;
         else
             rb.angularVelocity = turnSpeed * rotation;
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "whatever you name bullets")
+        {
+            HandleHurt();
+        }
+    }
+
+    private void HandleHurt()
+    {
+
     }
     
 }
