@@ -33,7 +33,7 @@ public class Player : MonoBehaviour {
     GameObject activeIndicator = null;
     #endregion
 
-
+    public float pingTime;
 
     void Start () {
         upIndicator.SetActive(false);
@@ -133,32 +133,28 @@ public class Player : MonoBehaviour {
         {
             Vector2 objectDirection = GetDirectionOfObject(closestObject.gameObject);
             SetActiveHUDDirection(objectDirection);
-            Invoke("DisableActiveIndicator", 3);
         }
     }
 
     private void SetActiveHUDDirection(Vector2 direction)
     {
-        if(direction.x == -1)
+        if (Math.Abs(direction.x) > Math.Abs(direction.y))
         {
-            leftIndicator.SetActive(true);
-            activeIndicator = leftIndicator;
+            if (direction.x > 0)
+                activeIndicator = rightIndicator;
+            else
+                activeIndicator = leftIndicator;
         }
-        if(direction.x == 1)
+        else
         {
-            rightIndicator.SetActive(true);
-            activeIndicator = rightIndicator;
+            if (direction.y > 0)
+                activeIndicator = upIndicator;
+            else
+                activeIndicator = downIndicator;
         }
-        if(Math.Ceiling(direction.y) == 1)
-        {
-            upIndicator.SetActive(true);
-            activeIndicator = upIndicator;
-        }
-        if(direction.y == -1)
-        {
-            downIndicator.SetActive(true);
-            activeIndicator = downIndicator;
-        }
+
+        activeIndicator.SetActive(true);
+        Invoke("DisableActiveIndicator", pingTime);
     }
 
     private void DisableActiveIndicator()
