@@ -33,8 +33,13 @@ public class PlayerController : MonoBehaviour {
 
     private void Accelerate()
     {
-        Vector2 add = transform.up * acceleration / 100;
-        rb.velocity += add;
+        Vector2 acc = (transform.up * acceleration / 100);
+        Vector2 vel = rb.velocity + acc;
+
+        if (vel.magnitude >= maxSpeed)
+            vel = transform.up * maxSpeed;
+
+        rb.velocity = acc;
     }
 
     private void Deccelerate()
