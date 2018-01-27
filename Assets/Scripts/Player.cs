@@ -16,10 +16,11 @@ public class Player : MonoBehaviour {
     #endregion
     #region  Character Animation
     public Animator animator;
-    public RuntimeAnimatorController animationController;
+    public AnimatorOverrideController normalAnimationController;
     public AnimatorOverrideController hurtAnimationController;
     #endregion
     public float hurtTime;
+    private bool isHurt;
     public GameController gc;
 
 
@@ -56,23 +57,26 @@ public class Player : MonoBehaviour {
 
         if (Input.GetKey(KeyCode.Space))
         {
-           
+            TakeDamage();
         }
+        
     }
 
     private void Accelerate()
     {
+        animator.SetBool("IsThrusting", true);
         Vector2 acc = (transform.up * acceleration / 100);
         Vector2 vel = rb.velocity + acc;
 
         if (vel.magnitude >= maxSpeed)
-            vel = transform.up * maxSpeed;
+            vel = transform.up * maxSpeed;//this line makes it lose velocity at an angle while drifting
 
         rb.velocity = vel;
     }
 
     private void Deccelerate()
     {
+        animator.SetBool("IsThrusting", false);
         rb.velocity = rb.velocity * 0.9f;
     }
 
@@ -88,14 +92,26 @@ public class Player : MonoBehaviour {
     {
         if (collision.tag == "whatever you name bullets")
         {
-            HandleHurt();
+            if (!isHurt)
+            {
+                TakeDamage();
+                Invoke("StopDamage", hurtTime);
+            }
         }
     }
 
-    private void HandleHurt()
+    private void TakeDamage()
     {
-
+        isHurt = true;
+        animator.runtimeAnimatorController = hurtAnimationController;
     }
+
+    private void StopDamage()
+    {
+        isHurt = false;
+        animator.runtimeAnimatorController = normalAnimationController;
+    }
+
     private void Ping()
     {
         var closestObject = gc.objectives.Where(x => x.IsActive).OrderBy(y => Vector2.Distance(transform.position, y.transform.position)).FirstOrDefault();

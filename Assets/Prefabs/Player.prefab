@@ -20,9 +20,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4841489387803840}
   - component: {fileID: 212993123392406382}
-  - component: {fileID: 95952628642559210}
   - component: {fileID: 114685887070452656}
   - component: {fileID: 50890762977808776}
+  - component: {fileID: 95157046460597672}
   m_Layer: 9
   m_Name: Player
   m_TagString: Untagged
@@ -63,7 +63,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!95 &95952628642559210
+--- !u!95 &95157046460597672
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 1
@@ -72,7 +72,7 @@ Animator:
   m_GameObject: {fileID: 1634941726066438}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 29e00e80c8a2d80438b0baa3d0b058cc, type: 2}
+  m_Controller: {fileID: 9100000, guid: 40bdbfc385bac854a9bf4b8fa9abbbc4, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -97,6 +97,13 @@ MonoBehaviour:
   forwardResistance: 1
   turnSpeed: 150
   turnResistance: 1
+  animator: {fileID: 95157046460597672}
+  normalAnimationController: {fileID: 22100000, guid: 98f2e9cd34feabe46983f205e973a19b,
+    type: 2}
+  hurtAnimationController: {fileID: 22100000, guid: b4aaed1476679fc4885be4c89fa41407,
+    type: 2}
+  hurtTime: 1
+  gc: {fileID: 0}
 --- !u!212 &212993123392406382
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -131,7 +138,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 53aa9292b1ab1e6448e3efe011f31c41, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 3a7149c28b9b21b418113aa46fc49bbe, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
