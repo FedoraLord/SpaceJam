@@ -6,23 +6,23 @@ using System.Linq;
 
 public class Player : MonoBehaviour {
 
+    #region Character Movement
     public Rigidbody2D rb;
-    public Animator animator;
-    public RuntimeAnimatorController animationController;
-    public AnimatorOverrideController hurtAnimationController;
     public float maxSpeed;
     public float acceleration;
     public float forwardResistance;
     public float turnSpeed;
     public float turnResistance;
-<<<<<<< HEAD
-    public float HurtTime;
-=======
-    public RaycastHit2D[] hits;
+    #endregion
+    #region  Character Animation
+    public Animator animator;
+    public RuntimeAnimatorController animationController;
+    public AnimatorOverrideController hurtAnimationController;
+    #endregion
+    public float hurtTime;
     public GameController gc;
-    public float smallPingDistance;
-    public float mediumPingDistance;
->>>>>>> aadbda1952c5c95e9d9e0148a86ef6a8954c6913
+
+
 
 	void Start () {
 		
@@ -56,7 +56,7 @@ public class Player : MonoBehaviour {
 
         if (Input.GetKey(KeyCode.Space))
         {
-            RaycastHit2D[] hits;
+           
         }
     }
 
@@ -83,8 +83,7 @@ public class Player : MonoBehaviour {
         else
             rb.angularVelocity = turnSpeed * rotation;
     }
-
-<<<<<<< HEAD
+    
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "whatever you name bullets")
@@ -97,26 +96,14 @@ public class Player : MonoBehaviour {
     {
 
     }
-=======
     private void Ping()
     {
         var closestObject = gc.objectives.Where(x => x.IsActive).OrderBy(y => Vector2.Distance(transform.position, y.transform.position)).FirstOrDefault();
-        var distance = Vector2.Distance(transform.position, closestObject.transform.position);
+        
         //Show the UI hud and the direction to point it
-        if (distance < smallPingDistance)
-        {
-        }
-        else if(distance < mediumPingDistance)
-        {
-
-        }
-        else
-        {
-
-        }
+        
     }
-
->>>>>>> aadbda1952c5c95e9d9e0148a86ef6a8954c6913
+    
     
 }
 
