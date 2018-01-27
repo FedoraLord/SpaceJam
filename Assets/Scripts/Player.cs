@@ -36,10 +36,6 @@ public class Player : MonoBehaviour {
     public float pingTime;
 
     void Start () {
-        upIndicator.SetActive(false);
-        downIndicator.SetActive(false);
-        leftIndicator.SetActive(false);
-        rightIndicator.SetActive(false);
 
     }
 

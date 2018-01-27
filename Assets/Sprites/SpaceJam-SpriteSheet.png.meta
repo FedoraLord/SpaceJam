@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 3a7149c28b9b21b418113aa46fc49bbe
-timeCreated: 1517080581
+timeCreated: 1517094106
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -14,6 +14,8 @@ TextureImporter:
     21300014: SpaceJam-SpriteSheet_7
     21300016: SpaceJam-SpriteSheet_8
     21300018: SpaceJam-SpriteSheet_9
+    21300020: SpaceJam-SpriteSheet_10
+    21300022: SpaceJam-SpriteSheet_11
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -108,7 +110,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 500
-        y: 3498
+        y: 3500
         width: 500
         height: 500
       alignment: 0
@@ -205,7 +207,7 @@ TextureImporter:
       name: SpaceJam-SpriteSheet_8
       rect:
         serializedVersion: 2
-        x: 1000
+        x: 0
         y: 2500
         width: 500
         height: 500
@@ -217,6 +219,34 @@ TextureImporter:
       tessellationDetail: 0
     - serializedVersion: 2
       name: SpaceJam-SpriteSheet_9
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 2500
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: SpaceJam-SpriteSheet_10
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 2500
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: SpaceJam-SpriteSheet_11
       rect:
         serializedVersion: 2
         x: 1500
