@@ -7,6 +7,8 @@ TagManager:
   - Enemy
   - Obstacle
   - Goal
+  - Stun Bolt
+  - Energy
   layers:
   - Default
   - TransparentFX
@@ -17,10 +19,10 @@ TagManager:
   - 
   - 
   - Background
-  - Ships
+  - Player
   - Obstacle
   - Gas
-  - 
+  - Enemy
   - 
   - 
   - 
