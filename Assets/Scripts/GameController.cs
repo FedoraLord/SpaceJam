@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour {
 
@@ -13,12 +14,11 @@ public class GameController : MonoBehaviour {
 
     private void Start()
     {
-        remainingObjectives = GameObject.FindGameObjectsWithTag("Goal").Where(x => x.GetComponent<Objective>().IsActive).Count();
+        remainingObjectives = GameObject.FindGameObjectsWithTag("Energy").Count();
     }
 
-    public void ObjectiveReached(Objective obj)
+    public void ObjectiveReached()
     {
-        obj.IsActive = false;
         remainingObjectives--;
         if (remainingObjectives == 0)
         {
@@ -29,15 +29,21 @@ public class GameController : MonoBehaviour {
     private void OpenDaWae()
     {
         //remove block
-        var objectives = GameObject.FindGameObjectsWithTag("Goal");
-        foreach (var item in objectives)
-        {
-            item.GetComponent<Objective>().IsActive = true;
-        }
+        //var objectives = GameObject.FindGameObjectsWithTag("Goal");
+        //foreach (var item in objectives)
+        //{
+        //    item.GetComponent<Objective>().IsActive = true;
+        //}
+        Win();
     }
 
-    internal void Lose()
+    public void Lose()
     {
-        throw new NotImplementedException();
+        SceneManager.LoadScene("GameOver");
+    }
+
+    public void Win()
+    {
+        SceneManager.LoadScene("Win");
     }
 }
