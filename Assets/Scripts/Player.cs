@@ -124,15 +124,18 @@ public class Player : MonoBehaviour {
     private void Ping()
     {
         StartPulsing();
-
-        var closestObject = gc.objectives.Where(x => x.IsActive && x.gameObject.tag == "Goal").OrderBy(y => Vector2.Distance(transform.position, y.transform.position)).FirstOrDefault();
+        
+        var closestObject = GameObject.FindGameObjectsWithTag("Goal").OrderBy(y => Vector2.Distance(transform.position, y.transform.position)).FirstOrDefault();
         if (closestObject != null)
         {
             Vector2 objectDirection = GetDirectionOfObject(closestObject.gameObject);
             SetActiveHUDDirection(objectDirection);
         }
 
-        var enemies = gc.enemies.Where(x => Vector2.Distance(x.transform.position, transform.position) < pingAggroDistance).ToList();
+        var enemies = GameObject.FindGameObjectsWithTag("Enemy")
+            .Where(x => Vector2.Distance(x.transform.position, transform.position) < pingAggroDistance)
+            .Select(x => x.GetComponent<Enemy>()).ToList();
+
         for (int i = 0; i < enemies.Count(); i++)
         {
             enemies[i].StartInvestigating(transform.position);
