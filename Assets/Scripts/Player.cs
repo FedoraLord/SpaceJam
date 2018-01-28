@@ -54,7 +54,7 @@ public class Player : MonoBehaviour {
         if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
         {
             Accelerate();
-            //RemoveEnergy(1);
+            RemoveEnergy(1);
         }
         else
         {
@@ -75,7 +75,7 @@ public class Player : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.LeftShift))
         {
             Ping();
-            //RemoveEnergy(20);
+            RemoveEnergy(20);
         }
 
         if (Input.GetKeyDown(KeyCode.Space))
@@ -88,7 +88,7 @@ public class Player : MonoBehaviour {
     {
         if (collision.gameObject.tag == "Energy")
         {
-            //MaxEnergy();
+            MaxEnergy();
             Destroy(collision.gameObject);
         }
     }
@@ -139,7 +139,7 @@ public class Player : MonoBehaviour {
     {
         StartPulsing();
         
-        var closestObject = GameObject.FindGameObjectsWithTag("Goal").OrderBy(y => Vector2.Distance(transform.position, y.transform.position)).FirstOrDefault();
+        var closestObject = GameObject.FindGameObjectsWithTag("Energy").OrderBy(y => Vector2.Distance(transform.position, y.transform.position)).FirstOrDefault();
         if (closestObject != null)
         {
             Vector2 objectDirection = GetDirectionOfObject(closestObject.gameObject);

@@ -189,6 +189,7 @@ MonoBehaviour:
   boltLocation: {fileID: 4659345110747064}
   boltSpeed: 20
   boltCooldown: 1
+  playerEnergy: {fileID: 0}
 --- !u!212 &212993123392406382
 SpriteRenderer:
   m_ObjectHideFlags: 1
