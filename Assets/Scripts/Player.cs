@@ -75,12 +75,13 @@ public class Player : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.LeftShift))
         {
             Ping();
-            RemoveEnergy(20);
+            RemoveEnergy(250);
         }
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
             Shoot();
+            RemoveEnergy(500);
         }
 
     }
@@ -125,6 +126,7 @@ public class Player : MonoBehaviour {
         {
             isHurt = true;
             animator.runtimeAnimatorController = hurtAnimationController;
+            RemoveEnergy(1000);
             Invoke("StopDamage", hurtTime);
         }
     }
@@ -159,8 +161,15 @@ public class Player : MonoBehaviour {
     private void RemoveEnergy(int _energy)
     {
         energy = energy - _energy;
+
+        if (energy <= 0)
+        {
+            gc.Lose();
+        }
+
         var scale = (40 * energy) / 5000;
         playerEnergy.transform.localScale = new Vector3(playerEnergy.transform.localScale.x, scale, playerEnergy.transform.localScale.z);
+        
         //TODO: Learnd Da-Wae to do this part 
         //playerEnergy.transform.localPosition = new Vector3(playerEnergy.transform.localPosition.x, -(40 - scale * 3.5f), playerEnergy.transform.localPosition.z);
     }

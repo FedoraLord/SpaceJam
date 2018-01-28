@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -33,5 +34,10 @@ public class GameController : MonoBehaviour {
         {
             item.GetComponent<Objective>().IsActive = true;
         }
+    }
+
+    internal void Lose()
+    {
+        throw new NotImplementedException();
     }
 }
