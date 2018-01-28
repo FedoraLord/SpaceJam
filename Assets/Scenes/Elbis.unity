@@ -610,6 +610,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e56aa43e4870ec4da465cecaacf8a15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  waypoints: []
+  enemyState: 0
 --- !u!61 &1485270257
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -843,6 +845,38 @@ Prefab:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 658810459}
+    - target: {fileID: 4583804365044284, guid: 1951e7025d1632c4f9f8a3d8185305d0, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4583804365044284, guid: 1951e7025d1632c4f9f8a3d8185305d0, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4583804365044284, guid: 1951e7025d1632c4f9f8a3d8185305d0, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4583804365044284, guid: 1951e7025d1632c4f9f8a3d8185305d0, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 46.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4583804365044284, guid: 1951e7025d1632c4f9f8a3d8185305d0, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 12.770058
+      objectReference: {fileID: 0}
+    - target: {fileID: 4583804365044284, guid: 1951e7025d1632c4f9f8a3d8185305d0, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 36.93601
+      objectReference: {fileID: 0}
+    - target: {fileID: 4583804365044284, guid: 1951e7025d1632c4f9f8a3d8185305d0, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 479.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1776324450355976, guid: 1951e7025d1632c4f9f8a3d8185305d0, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1951e7025d1632c4f9f8a3d8185305d0, type: 2}
   m_IsPrefabParent: 0
