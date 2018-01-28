@@ -176,6 +176,7 @@ public class Player : MonoBehaviour {
 
     private void MaxEnergy()
     {
+        energy = 5000;
         playerEnergy.transform.localScale = new Vector3(40, 40, 0);
     }
 
