@@ -254,6 +254,7 @@ public class Enemy : MonoBehaviour
         else
         {
             scale.y = beamDistance;
+            deathHit.transform.position = (sight.position + transform.up * beamDistance);
         }
 
         deathBeam.transform.localScale = scale;
