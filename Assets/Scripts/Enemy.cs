@@ -36,6 +36,8 @@ public class Enemy : MonoBehaviour
     public float fireLatency;
     public GameObject aimBeam;
     public GameObject deathBeam;
+    public GameObject deathBlast;
+    public GameObject deathHit;
     public float beamDistance;
 
     private void Start()
@@ -63,6 +65,8 @@ public class Enemy : MonoBehaviour
 
         aimBeam.SetActive(isAiming);
         deathBeam.SetActive(isFiring);
+        deathBlast.SetActive(isFiring);
+        deathHit.SetActive(isFiring);
     }
 
     private bool IsPlayerInSight()
@@ -237,6 +241,7 @@ public class Enemy : MonoBehaviour
         if (numHits > 0)
         {
             scale.y = hits[0].distance;
+            deathHit.transform.position = hits[0].point;
             if (hits[0].transform.CompareTag("Player"))
             {
                 player.GetComponent<Player>().TakeDamage();
