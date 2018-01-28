@@ -91,6 +91,7 @@ public class Player : MonoBehaviour {
         {
             MaxEnergy();
             Destroy(collision.gameObject);
+            gc.ObjectiveReached();
         }
     }
 
