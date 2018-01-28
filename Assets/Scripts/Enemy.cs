@@ -108,7 +108,7 @@ public class Enemy : MonoBehaviour
 
     private void Patrol()
     {
-        Vector2 destination = waypoints[currentWaypoint].position;
+        Vector2 destination = waypoints[    ].position;
         bool inRange = MoveWithinRangeOf(destination, minDestinationDistance);
 
         if (inRange)

@@ -8,6 +8,7 @@ TagManager:
   - Obstacle
   - Goal
   - Stun Bolt
+  - Energy
   layers:
   - Default
   - TransparentFX
