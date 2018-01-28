@@ -54,7 +54,7 @@ public class Player : MonoBehaviour {
         if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
         {
             Accelerate();
-            RemoveEnergy(1);
+            //RemoveEnergy(1);
         }
         else
         {
@@ -75,7 +75,7 @@ public class Player : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.LeftShift))
         {
             Ping();
-            RemoveEnergy(20);
+            //RemoveEnergy(20);
         }
 
         if (Input.GetKeyDown(KeyCode.Space))
@@ -88,7 +88,7 @@ public class Player : MonoBehaviour {
     {
         if (collision.gameObject.tag == "Energy")
         {
-            MaxEnergy();
+            //MaxEnergy();
             Destroy(collision.gameObject);
         }
     }

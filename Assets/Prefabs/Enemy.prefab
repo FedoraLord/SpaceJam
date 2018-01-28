@@ -211,8 +211,7 @@ MonoBehaviour:
   animator: {fileID: 95211400823353774}
   sight: {fileID: 4128325818830580}
   waypoints:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 4031234554169522}
   speed: 3
   turnSpeed: 100
   minDestinationDistance: 0.5
