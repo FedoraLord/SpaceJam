@@ -324,11 +324,8 @@
     <Compile Include="Assets\Scripts\Objective.cs" />
     <Compile Include="Assets\Scripts\Obstacle.cs" />
     <Compile Include="Assets\Scripts\Player.cs" />
-<<<<<<< HEAD
     <Compile Include="Assets\Scripts\Pulse.cs" />
-=======
     <Compile Include="Assets\Scripts\TitleScreen.cs" />
->>>>>>> 35041cac8c4e5c1f5269e3237283c9040ae4d12b
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Fonts\space_age\Space.txt" />
