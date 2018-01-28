@@ -32,7 +32,7 @@ public class Enemy : MonoBehaviour
     {
         RaycastHit2D[] hits = new RaycastHit2D[0];
         int asdf = Physics2D.Raycast(transform.position, transform.up, raycastFilter, hits, visionDistance);
-        Debug.Log(asdf);
+        //Debug.Log(asdf);
         //switch (enemyState)
         //{
         //    case EnemyState.Patrolling:

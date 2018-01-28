@@ -541,7 +541,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1634941726066438, guid: c4c3547ebc252d741b0b7c2866fcf4ed, type: 2}
       propertyPath: m_Name
-      value: Player (1)
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 114685887070452656, guid: c4c3547ebc252d741b0b7c2866fcf4ed,
         type: 2}
@@ -610,8 +610,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e56aa43e4870ec4da465cecaacf8a15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waypoints: []
   enemyState: 0
+  player: {fileID: 0}
+  rb: {fileID: 0}
+  waypoints: []
+  speed: 0
+  turnSpeed: 0
+  minDestinationDistance: 0
+  visionDistance: 0
+  raycastFilter:
+    useTriggers: 0
+    useLayerMask: 0
+    useDepth: 0
+    useOutsideDepth: 0
+    useNormalAngle: 0
+    useOutsideNormalAngle: 0
+    layerMask:
+      serializedVersion: 2
+      m_Bits: 0
+    minDepth: 0
+    maxDepth: 0
+    minNormalAngle: 0
+    maxNormalAngle: 0
 --- !u!61 &1485270257
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -721,6 +741,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c107bc9ee291c446a61082692be1aff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pulse: {fileID: 0}
   objectives:
   - {fileID: 73213261}
   enemies:
