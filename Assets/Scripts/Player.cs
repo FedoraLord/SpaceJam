@@ -33,6 +33,9 @@ public class Player : MonoBehaviour {
     GameObject activeIndicator = null;
     #endregion
 
+    public Transform pulseLocation;
+    public float pulseInterval;
+    private int numPulses;
     public float pingTime;
 
     void Start () {
@@ -65,7 +68,7 @@ public class Player : MonoBehaviour {
         }
         Turn(rotation);
 
-        if (Input.GetKey(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             Ping();
         }
@@ -124,12 +127,31 @@ public class Player : MonoBehaviour {
 
     private void Ping()
     {
+        StartPulsing();
+
         var closestObject = gc.objectives.Where(x => x.IsActive && x.gameObject.tag == "Goal").OrderBy(y => Vector2.Distance(transform.position, y.transform.position)).FirstOrDefault();
         if (closestObject != null)
         {
             Vector2 objectDirection = GetDirectionOfObject(closestObject.gameObject);
             SetActiveHUDDirection(objectDirection);
         }
+    }
+
+    private void StartPulsing()
+    {
+        if (!IsInvoking("SendPulse"))
+        {
+            numPulses = 0;
+            InvokeRepeating("SendPulse", 0, pulseInterval);
+        }
+    }
+
+    private void SendPulse()
+    {
+        Instantiate(gc.pulse, pulseLocation.position, pulseLocation.rotation);
+        numPulses++;
+        if (numPulses >= 3)
+            CancelInvoke("SendPulse");
     }
 
     private void SetActiveHUDDirection(Vector2 direction)

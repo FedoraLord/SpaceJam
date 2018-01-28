@@ -26,6 +26,21 @@ GameObject:
   - component: {fileID: 70893059067283028}
   m_Layer: 9
   m_Name: Player
+  m_TagString: Player
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1808448987908812
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4872396032606422}
+  m_Layer: 9
+  m_Name: PulseLocation
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -40,8 +55,22 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 4872396032606422}
   m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4872396032606422
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1808448987908812}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.16, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4841489387803840}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &50890762977808776
@@ -118,13 +147,15 @@ MonoBehaviour:
     type: 2}
   hurtAnimationController: {fileID: 22100000, guid: b4aaed1476679fc4885be4c89fa41407,
     type: 2}
-  hurtTime: 1
+  hurtTime: 2
   gc: {fileID: 0}
   upIndicator: {fileID: 0}
   downIndicator: {fileID: 0}
   leftIndicator: {fileID: 0}
   rightIndicator: {fileID: 0}
-  pingTime: 0
+  pulseLocation: {fileID: 4872396032606422}
+  pulseInterval: 0.7
+  pingTime: 3
 --- !u!212 &212993123392406382
 SpriteRenderer:
   m_ObjectHideFlags: 1

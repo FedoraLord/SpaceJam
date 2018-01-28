@@ -20,6 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4031234554169522}
   - component: {fileID: 212342801865012244}
+  - component: {fileID: 114203437909053882}
   - component: {fileID: 95211400823353774}
   - component: {fileID: 50153267030164980}
   - component: {fileID: 61465885517210988}
@@ -105,6 +106,25 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114203437909053882
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1179474557249286}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e56aa43e4870ec4da465cecaacf8a15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyState: 0
+  player: {fileID: 0}
+  rb: {fileID: 50153267030164980}
+  waypoints:
+  - {fileID: 0}
+  - {fileID: 0}
+  speed: 1
+  turnSpeed: 100
 --- !u!212 &212342801865012244
 SpriteRenderer:
   m_ObjectHideFlags: 1

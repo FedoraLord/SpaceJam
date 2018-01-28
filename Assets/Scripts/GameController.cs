@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class GameController : MonoBehaviour {
 
+    public GameObject pulse;
     public Objective[] objectives;
     public Enemy[] enemies;
 
