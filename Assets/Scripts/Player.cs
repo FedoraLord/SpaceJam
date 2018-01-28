@@ -44,12 +44,17 @@ public class Player : MonoBehaviour {
     public float boltCooldown;
     private bool canShoot = true;
     private List<GameObject> bolts = new List<GameObject>();
-    
+
+    #region Player Stats
+    public GameObject playerEnergy;
+    int energy = 5000;
+    #endregion
     private void FixedUpdate()
     {
         if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
         {
             Accelerate();
+            RemoveEnergy(1);
         }
         else
         {
@@ -70,6 +75,7 @@ public class Player : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.LeftShift))
         {
             Ping();
+            RemoveEnergy(20);
         }
 
         if (Input.GetKeyDown(KeyCode.Space))
@@ -77,6 +83,14 @@ public class Player : MonoBehaviour {
             Shoot();
         }
 
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Energy")
+        {
+            MaxEnergy();
+            Destroy(collision.gameObject);
+        }
     }
 
     private void Accelerate()
@@ -139,6 +153,20 @@ public class Player : MonoBehaviour {
         }
     }
 
+    private void RemoveEnergy(int _energy)
+    {
+        energy = energy - _energy;
+        var scale = (40 * energy) / 5000;
+        playerEnergy.transform.localScale = new Vector3(playerEnergy.transform.localScale.x, scale, playerEnergy.transform.localScale.z);
+        //TODO: Learnd Da-Wae to do this part 
+        //playerEnergy.transform.localPosition = new Vector3(playerEnergy.transform.localPosition.x, -(40 - scale * 3.5f), playerEnergy.transform.localPosition.z);
+    }
+
+    private void MaxEnergy()
+    {
+        playerEnergy.transform.localScale = new Vector3(40, 40, 0);
+    }
+
     private void StartPulsing()
     {
         if (!IsInvoking("SendPulse"))
@@ -195,6 +223,7 @@ public class Player : MonoBehaviour {
     {
         if (canShoot)
         {
+            gameObject.GetComponent<AudioSource>().Play();
             canShoot = false;
             GameObject bolt = Instantiate(gc.stunBolt, boltLocation.position, boltLocation.rotation);
             bolt.GetComponent<Rigidbody2D>().velocity = bolt.transform.up * boltSpeed;
