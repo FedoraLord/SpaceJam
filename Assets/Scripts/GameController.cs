@@ -5,16 +5,7 @@ using UnityEngine;
 public class GameController : MonoBehaviour {
 
     public GameObject pulse;
+    public GameObject stunBolt;
     public Objective[] objectives;
     public Enemy[] enemies;
-
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 }

@@ -37,15 +37,14 @@ public class Player : MonoBehaviour {
     public float pulseInterval;
     private int numPulses;
     public float pingTime;
+    public float pingAggroDistance;
 
-    void Start () {
-
-    }
-
-    void Update () {
-		
-	}
-
+    public Transform boltLocation;
+    public float boltSpeed;
+    public float boltCooldown;
+    private bool canShoot = true;
+    private List<GameObject> bolts = new List<GameObject>();
+    
     private void FixedUpdate()
     {
         if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
@@ -68,11 +67,16 @@ public class Player : MonoBehaviour {
         }
         Turn(rotation);
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.LeftShift))
         {
             Ping();
         }
-        
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            Shoot();
+        }
+
     }
 
     private void Accelerate()
@@ -101,22 +105,14 @@ public class Player : MonoBehaviour {
             rb.angularVelocity = turnSpeed * rotation;
     }
     
-    private void OnTriggerEnter2D(Collider2D collision)
+    public void TakeDamage()
     {
-        if (collision.tag == "whatever you name bullets")
+        if (!isHurt)
         {
-            if (!isHurt)
-            {
-                TakeDamage();
-                Invoke("StopDamage", hurtTime);
-            }
+            isHurt = true;
+            animator.runtimeAnimatorController = hurtAnimationController;
+            Invoke("StopDamage", hurtTime);
         }
-    }
-
-    private void TakeDamage()
-    {
-        isHurt = true;
-        animator.runtimeAnimatorController = hurtAnimationController;
     }
 
     private void StopDamage()
@@ -134,6 +130,12 @@ public class Player : MonoBehaviour {
         {
             Vector2 objectDirection = GetDirectionOfObject(closestObject.gameObject);
             SetActiveHUDDirection(objectDirection);
+        }
+
+        var enemies = gc.enemies.Where(x => Vector2.Distance(x.transform.position, transform.position) < pingAggroDistance).ToList();
+        for (int i = 0; i < enemies.Count(); i++)
+        {
+            enemies[i].StartInvestigating(transform.position);
         }
     }
 
@@ -189,8 +191,29 @@ public class Player : MonoBehaviour {
         return heading.normalized;
     }
     
-    
-    
+    private void Shoot()
+    {
+        if (canShoot)
+        {
+            canShoot = false;
+            GameObject bolt = Instantiate(gc.stunBolt, boltLocation.position, boltLocation.rotation);
+            bolt.GetComponent<Rigidbody2D>().velocity = bolt.transform.up * boltSpeed;
+            bolts.Add(bolt);
+            Invoke("FinishBoltCooldown", boltCooldown);
+            Invoke("DeleteBolt", 2);
+        }
+    }
+
+    private void FinishBoltCooldown()
+    {
+        canShoot = true;
+    }
+
+    private void DeleteBolt()
+    {
+        Destroy(bolts[0]);
+        bolts.RemoveAt(0);
+    }
 }
 
 

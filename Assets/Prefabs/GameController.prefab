@@ -52,5 +52,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pulse: {fileID: 1771583203111552, guid: 78a74685922a8ea4e8d893432f3d632c, type: 2}
+  stunBolt: {fileID: 1122200420509614, guid: 271a6651ecc660941a193ec9ad597386, type: 2}
   objectives: []
   enemies: []
