@@ -38,7 +38,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1179474557249286}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.93, y: 0.05, z: 0}
+  m_LocalPosition: {x: 6.93, y: -3.64, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -123,8 +123,13 @@ MonoBehaviour:
   waypoints:
   - {fileID: 0}
   - {fileID: 0}
-  speed: 1
+  speed: 3
   turnSpeed: 100
+  minDestinationDistance: 0.5
+  visionDistance: 5
+  raycastLayer:
+    serializedVersion: 2
+    m_Bits: 512
 --- !u!212 &212342801865012244
 SpriteRenderer:
   m_ObjectHideFlags: 1
